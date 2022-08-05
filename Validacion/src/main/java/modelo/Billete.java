@@ -15,6 +15,7 @@ public class Billete {
 		this.dni="";
 		this.tipoBillete=1;
 		this.idayVuelta=false;
+		this.numPasajeros=1;
 	}
 
 	public Billete(String nombre, int edad, int tipoBillete,
@@ -108,6 +109,9 @@ public class Billete {
 			if (this.idayVuelta) {
 				precio=precio-precio*0.15;
 			}
+		}
+		if (this.idayVuelta) {
+			precio=precio*2;
 		}
 		return precio*this.numPasajeros;
 	}

@@ -15,6 +15,11 @@
 	if (b==null) {
 		response.sendRedirect("billete.jsp");
 	}
+	session.removeAttribute("errorNombre");
+	session.removeAttribute("errorEdad");
+	session.removeAttribute("errorBillete");
+	session.removeAttribute("errorPasajeros");
+	
 	%>
 	
 	
@@ -34,6 +39,6 @@
 		<li>Importe total: <%=b.getImporteTotal() %></li>
 	</ul>
  
-
+	<%session.removeAttribute("billete"); %>
 </body>
 </html>

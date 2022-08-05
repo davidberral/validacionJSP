@@ -40,6 +40,13 @@ public class ValidarBilleteServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		HttpSession session = request.getSession();
+		
+		// borrando los errores posibles
+		session.removeAttribute("errorNombre");
+		session.removeAttribute("errorEdad");
+		session.removeAttribute("errorBillete");
+		session.removeAttribute("errorPasajeros");
+		
 		Billete b = new Billete();
 		boolean error=false;
 		
